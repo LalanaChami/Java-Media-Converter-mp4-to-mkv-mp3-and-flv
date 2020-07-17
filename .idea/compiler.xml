@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="JavaMediaConvertor" />
+        <module name="Java-Media-Converter-mp4-to-mkv-mp3-and-flv-" />
       </profile>
     </annotationProcessing>
   </component>
