@@ -19,8 +19,11 @@ public class Main {
 //        convert.mp4TOmp3();
       //  convert.mp4TOflv();
 
-        mp4tomkv mkv=new mp4tomkv();
-        mkv.encode();
+      //  mp4tomkv mkv=new mp4tomkv();
+      //  mkv.encode();
+
+        mp4TOmp3 mp3 =new mp4TOmp3();
+        mp3.encode();
 
 
 
