@@ -14,10 +14,13 @@ public class Main {
 
     public static void main(String[] args){
         BasicConfigurator.configure();
-        Main convert = new Main();
+       // Main convert = new Main();
 //        convert.mp4TOmkv();
 //        convert.mp4TOmp3();
-        convert.mp4TOflv();
+      //  convert.mp4TOflv();
+
+        mp4tomkv mkv=new mp4tomkv();
+        mkv.encode();
 
 
 
