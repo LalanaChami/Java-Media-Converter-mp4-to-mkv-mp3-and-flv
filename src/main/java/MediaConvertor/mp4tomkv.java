@@ -4,12 +4,16 @@ import ws.schild.jave.*;
 
 import java.io.File;
 
-public class mp4tomkv {
+//tharindu's path:"D:\\converter\\media\\mp4tomkv\\cinno.mp4"    "D:\\converter\\mediaConverted\\mp4convertedmkv\\cinno.mkv"
+//nalaka's path: "C:\\Users\\Pc\\Desktop\\converter\\media\\mp4tomkv\\01.mp4"  "C:\\Users\\Pc\\Desktop\\converter\\mediaconverter\\01.mkv"
+//lalana's path: "/Users/admin/Documents/mediaConvertor/media/mp4Tomkv/1.mp4"  "/Users/admin/Documents/mediaConvertor/mediaConverted/mp4Tomkv-converted/1.mkv"
 
-    public void encode(){
+public class mp4tomkv extends MediaEncoder {
+
+    public void encode(String filename){
         try {
-            File source = new File("D:\\converter\\media\\mp4tomkv\\cinno.mp4");
-            File target = new File("D:\\converter\\mediaConverted\\mp4convertedmkv\\cinno.mkv");
+            File source = new File("/Users/admin/Documents/mediaConvertor/media/mp4Tomkv/"+filename);
+            File target = new File("/Users/admin/Documents/mediaConvertor/mediaConverted/mp4Tomkv-converted/"+filename+".mkv");
 
             //Audio Attributes
             AudioAttributes audio = new AudioAttributes();
