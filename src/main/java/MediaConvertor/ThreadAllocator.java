@@ -4,6 +4,20 @@ import java.io.IOException;
 
 public class ThreadAllocator {
 
+    private static ThreadAllocator instance;
+
+    //created a private constructor to cerate singleton pattern
+    private ThreadAllocator() {
+
+    }
+
+    public static ThreadAllocator getInstance(){
+        if(instance == null ){
+            instance = new ThreadAllocator();
+        }
+        return instance;
+    }
+
     public void threadAssigner(){
 
         Watcher watch = new Watcher();

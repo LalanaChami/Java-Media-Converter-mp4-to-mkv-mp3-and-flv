@@ -13,9 +13,12 @@ import java.io.File;
 public class Main {
 
     public static void main(String[] args){
-        BasicConfigurator.configure();
-       ThreadAllocator ThreadAssign = new ThreadAllocator();
-       ThreadAssign.threadAssigner();
+        BasicConfigurator.configure(); //  to log all stack trace messages in console (used by JAVE)
+
+        //used singleton pattern in creating the ThreadAllocator Object
+        ThreadAllocator assingThread = ThreadAllocator.getInstance();
+
+        assingThread.threadAssigner();
 
 
 
