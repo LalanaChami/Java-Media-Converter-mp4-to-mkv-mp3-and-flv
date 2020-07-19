@@ -12,11 +12,11 @@ import java.io.File;
 //lalana's path: "/Users/admin/Documents/mediaConvertor/media/mp4Tomp3/1.mp4"  "/Users/admin/Documents/mediaConvertor/mediaConverted/mp4Tomp3-converted/1.mp3"
 
 
-public class mp4TOmp3 {
+public class mp4TOmp3 extends MediaEncoder{
     public void encode(String filename){
         try {
             File source = new File("/Users/admin/Documents/mediaConvertor/media/mp4Tomp3/"+filename);
-            File target = new File("/Users/admin/Documents/mediaConvertor/mediaConverted/mp3Toflv-converted/"+filename+".mp3");
+            File target = new File("/Users/admin/Documents/mediaConvertor/mediaConverted/mp4Tomp3-converted/"+filename+".mp3");
 
             //Audio Attributes
             AudioAttributes audio = new AudioAttributes();

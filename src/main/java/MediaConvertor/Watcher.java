@@ -1,90 +1,17 @@
 package MediaConvertor;
 
-import MediaConvertor.mp4TOmp3;
-import org.apache.log4j.BasicConfigurator;
+//In the watcher class java NIO dependency is used to watch the IO functions of the folder
+//NIO is a Non blocking IO dependency that allows to watch events in a folder
 
 import java.io.IOException;
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardWatchEventKinds;
-import java.nio.file.WatchEvent;
-import java.nio.file.WatchKey;
-import java.nio.file.WatchService;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.nio.file.*;
 
-public class Watcher  {
+public class Watcher implements WatcherInterface {
 
-    public static void main(String[] args) {
-
-        BasicConfigurator.configure();
-
-        Watcher watch = new Watcher();
-        watch.threadAssigner();
-
-//        watch.check_mp4TOflv();
-//        watch.check_mp4TOmkv();
-//        watch.check_mp4TOmp3();
-
-
-    }
-
-    public void threadAssigner(){
-
-        Runnable thread1 = () -> {
-            try {
-                check_mp4TOflv() ;
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        };
-        Thread t1 = new Thread(thread1);
-        t1.start();
-
-
-        Runnable thread2 = () -> {
-            try {
-                check_mp4TOmkv();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        };
-        Thread t2 = new Thread(thread2);
-        t2.start();
-
-
-        Runnable thread3 = () -> {
-            try {
-                check_mp4TOmp3();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        };
-        Thread t3 = new Thread(thread3);
-        t3.start();
-
-
-        try {
-            t1.join();
-            t2.join();
-            t3.join();
-        } catch (InterruptedException e) {
-
-            e.printStackTrace();
-        }
-    }
-
-
+    EcoderFactory factory = new EcoderFactory();
 
     //checks wheather new mp4 is added to mp4TOflv file
-   public void check_mp4TOflv() throws IOException, InterruptedException {
+    public void check_mp4TOflv() throws IOException, InterruptedException {
 
         Path faxFolder = Paths.get("/Users/admin/Documents/mediaConvertor/media/mp4Toflv/");
         WatchService watchService = FileSystems.getDefault().newWatchService();
@@ -103,8 +30,11 @@ public class Watcher  {
                     if ( fileName.toString().endsWith(".mp4")){
                         System.out.println("New File Added : " + fileName);
 
-                       // mp4TOflv flv =new mp4TOflv();
-                       // flv.encode(fileName);
+                        MediaEncoder flv =factory.getInstence("flv"); //used factory pattern in creating the flv object
+                        flv.encode(fileName);
+
+//                        mp4toflv flv =new mp4toflv();
+//                        flv.encode(fileName);
 
                     } else {
                         System.out.println("File created in valid : " + fileName+" is a not supported file format");
@@ -119,7 +49,7 @@ public class Watcher  {
     }
 
     //checks wheather new mp4 is added to mp4TOmkv file
-   public void check_mp4TOmkv() throws IOException, InterruptedException {
+    public void check_mp4TOmkv() throws IOException, InterruptedException {
 
         Path faxFolder = Paths.get("/Users/admin/Documents/mediaConvertor/media/mp4Tomkv/");
         WatchService watchService = FileSystems.getDefault().newWatchService();
@@ -138,8 +68,11 @@ public class Watcher  {
                     if ( fileName.toString().endsWith(".mp4")){
                         System.out.println("New File Added : " + fileName);
 
-                      //  mp4TOmkv mkv =new mp4TOmkv();
-                      //  mkv.encode(fileName);
+                        MediaEncoder mkv =factory.getInstence("mkv"); //used factory pattern in creating the mkv object
+                        mkv.encode(fileName);
+
+//                        mp4tomkv mkv = new mp4tomkv();
+//                        mkv.encode(fileName);
 
 
                     } else {
@@ -174,8 +107,11 @@ public class Watcher  {
                     if ( fileName.toString().endsWith(".mp4")){
                         System.out.println("New File Added : " + fileName);
 
-                        mp4TOmp3 mp3 =new mp4TOmp3();
-                       // mp3.encode(fileName);
+                        MediaEncoder mp3 =factory.getInstence("mp3"); //used factory pattern in creating the mp3 object
+                        mp3.encode(fileName);
+
+//                        mp4TOmp3 mp3 = new mp4TOmp3();
+//                        mp3.encode(fileName);
 
 
                     } else {

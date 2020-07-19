@@ -8,12 +8,12 @@ import java.io.File;
 //nalaka's path: "C:\\Users\\Pc\\Desktop\\converter\\media\\mp4tomkv\\01.mp4"  "C:\\Users\\Pc\\Desktop\\converter\\mediaconverter\\01.mkv"
 //lalana's path: "/Users/admin/Documents/mediaConvertor/media/mp4Tomkv/1.mp4"  "/Users/admin/Documents/mediaConvertor/mediaConverted/mp4Tomkv-converted/1.mkv"
 
-public class mp4tomkv {
+public class mp4tomkv extends MediaEncoder {
 
     public void encode(String filename){
         try {
             File source = new File("/Users/admin/Documents/mediaConvertor/media/mp4Tomkv/"+filename);
-            File target = new File("/Users/admin/Documents/mediaConvertor/mediaConverted/mkvToflv-converted/"+filename+".mkv");
+            File target = new File("/Users/admin/Documents/mediaConvertor/mediaConverted/mp4Tomkv-converted/"+filename+".mkv");
 
             //Audio Attributes
             AudioAttributes audio = new AudioAttributes();

@@ -8,7 +8,7 @@ import java.io.File;
 //nalaka's path: "C:\\Users\\Pc\\Desktop\\converter\\media\\mp4toflv\\01.mp4"  "C:\\Users\\Pc\\Desktop\\converter\\mediaconverter\\01.flv"
 //lalana's path: "/Users/admin/Documents/mediaConvertor/media/mp4Toflv/1.mp4"  "/Users/admin/Documents/mediaConvertor/mediaConverted/mp4Toflv-converted/1.flv"
 
-public class mp4toflv {
+public class mp4toflv extends MediaEncoder{
 
     public void encode( String filename){
         try {
