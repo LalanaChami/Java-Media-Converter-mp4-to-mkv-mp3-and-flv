@@ -1,7 +1,10 @@
-package MediaConvertor;
+package MediaConvertor.Watcher;
 
 //In the watcher class java NIO dependency is used to watch the IO functions of the folder
 //NIO is a Non blocking IO dependency that allows to watch events in a folder
+
+import MediaConvertor.EcoderFactory;
+import MediaConvertor.MediaEncoder;
 
 import java.io.IOException;
 import java.nio.file.*;
