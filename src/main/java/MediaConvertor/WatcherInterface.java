@@ -1,8 +1,10 @@
 package MediaConvertor;
 
+import java.io.IOException;
+
 public interface WatcherInterface {
-    public void check_mp4TOflv() ;
-    public void check_mp4TOmkv() ;
-    public void check_mp4TOmp3() ;
+    public void check_mp4TOflv() throws IOException, InterruptedException ;
+    public void check_mp4TOmkv() throws IOException, InterruptedException ;
+    public void check_mp4TOmp3() throws IOException, InterruptedException ;
 
 }

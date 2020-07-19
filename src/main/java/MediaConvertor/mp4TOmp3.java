@@ -7,11 +7,16 @@ import ws.schild.jave.MultimediaObject;
 
 import java.io.File;
 
+//tharindu's path:"D:\\converter\\media\\mp4tomp3\\cinno.mp4"    "D:\\converter\\mediaConverted\\mp4convertedmp3\\cinno.mp3"
+//nalaka's path: "C:\\Users\\Pc\\Desktop\\converter\\media\\mp4tomp3\\01.mp4"  "C:\\Users\\Pc\\Desktop\\converter\\mediaconverter\\01.mp3"
+//lalana's path: "/Users/admin/Documents/mediaConvertor/media/mp4Tomp3/1.mp4"  "/Users/admin/Documents/mediaConvertor/mediaConverted/mp4Tomp3-converted/1.mp3"
+
+
 public class mp4TOmp3 {
-    public void encode(){
+    public void encode(String filename){
         try {
-            File source = new File("C:\\Users\\Pc\\Desktop\\converter\\media\\mp4tomp3\\01.mp4");
-            File target = new File("C:\\Users\\Pc\\Desktop\\converter\\mediaconverter\\01.mp3");
+            File source = new File("/Users/admin/Documents/mediaConvertor/media/mp4Tomp3/"+filename);
+            File target = new File("/Users/admin/Documents/mediaConvertor/mediaConverted/mp3Toflv-converted/"+filename+".mp3");
 
             //Audio Attributes
             AudioAttributes audio = new AudioAttributes();
