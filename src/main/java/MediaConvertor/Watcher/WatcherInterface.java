@@ -1,4 +1,6 @@
-package MediaConvertor;
+package MediaConvertor.Watcher;
+
+import MediaConvertor.Watcher;
 
 import java.io.IOException;
 
