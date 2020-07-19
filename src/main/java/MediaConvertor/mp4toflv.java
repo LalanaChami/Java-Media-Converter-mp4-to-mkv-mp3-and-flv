@@ -4,12 +4,16 @@ import ws.schild.jave.*;
 
 import java.io.File;
 
+//tharindu's path:"D:\\converter\\media\\mp4toflv\\cinno.mp4"    "D:\\converter\\mediaConverted\\mp4convertedflv\\cinno.flv"
+//nalaka's path: "C:\\Users\\Pc\\Desktop\\converter\\media\\mp4toflv\\01.mp4"  "C:\\Users\\Pc\\Desktop\\converter\\mediaconverter\\01.flv"
+//lalana's path: "/Users/admin/Documents/mediaConvertor/media/mp4Toflv/1.mp4"  "/Users/admin/Documents/mediaConvertor/mediaConverted/mp4Toflv-converted/1.flv"
+
 public class mp4toflv {
 
-    public void encode(){
+    public void encode( String filename){
         try {
-            File source = new File("D:\\converter\\media\\mp4toflv\\cinno.mp4");
-            File target = new File("D:\\converter\\mediaConverted\\mp4convertedflv\\cinno.flv");
+            File source = new File("/Users/admin/Documents/mediaConvertor/media/mp4Toflv/"+filename);
+            File target = new File("/Users/admin/Documents/mediaConvertor/mediaConverted/mp4Toflv-converted/"+filename+".flv");
 
             //Audio Attributes
             AudioAttributes audio = new AudioAttributes();

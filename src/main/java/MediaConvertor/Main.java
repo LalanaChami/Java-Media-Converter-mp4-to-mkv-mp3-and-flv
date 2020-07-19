@@ -26,8 +26,8 @@ public class Main {
         //mp4TOmp3 mp3 =new mp4TOmp3();
        // mp3.encode();
 
-        mp4toflv flv=new mp4toflv();
-        flv.encode();
+//        mp4toflv flv=new mp4toflv();
+//        flv.encode();
 
 
 
